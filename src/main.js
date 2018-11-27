@@ -3,12 +3,21 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router/index';
-import ElementUI from 'element-ui';
+import MyHttpServer from '@/plugin/axios.js';
+
+
+
+import '@/assets/css/reset.css';
 //引入element-ui的样式文件
+import ElementUI from 'element-ui';
+//引入重置样式文件
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false;
 //使用element-ui插件
 Vue.use(ElementUI);
+
+// 使用axios插件
+Vue.use(MyHttpServer);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
