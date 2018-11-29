@@ -4,7 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router/index';
 import MyHttpServer from '@/plugin/axios.js';
-
+import moment from 'moment';
 
 
 import '@/assets/css/reset.css';
@@ -18,6 +18,11 @@ Vue.use(ElementUI);
 
 // 使用axios插件
 Vue.use(MyHttpServer);
+
+//全局过滤器--日期格式化
+Vue.filter('fmDate',function(time){
+  return moment(time).format('YYYY-MM-DD');
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
