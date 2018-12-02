@@ -22,8 +22,13 @@ Vue.use(MyHttpServer);
 //全局过滤器--日期格式化
 Vue.filter('fmDate',function(time){
   return moment(time).format('YYYY-MM-DD');
-})
+});
+
+
 /* eslint-disable no-new */
+import Mybread from "@/components/custom/Mybread.vue";
+// 定义全局组件--面包屑组件
+Vue.component('my-bread',Mybread);
 new Vue({
   el: '#app',
   router,

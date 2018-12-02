@@ -6,11 +6,22 @@ import Home from "@/components/home/home.vue";
 
 import User from "@/components/user/users.vue";
 Vue.use(Router);
-
+//引入权限列表
+import Right from "@/components/rights/right.vue";
+//引入角色列表
+import Role from "@/components/rights/role.vue";
 export default new Router({
   routes: [
     { name: "Login", path: "/login", component: Login },
-    { name: "Home", path: "/", component: Home,
-       children: [{name:'User',path:'user',component:User}] }
+    { name: "Home", 
+      path: "/",
+      component: Home,
+      children: [
+        {name:'User',path:'user',component:User},
+        {name:'Right',path:'right',component:Right},
+        {name:'Role',path:'role',component:Role}
+      
+      ] 
+      }
   ]
 });

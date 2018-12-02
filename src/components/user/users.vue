@@ -15,7 +15,7 @@
         <el-button type="success" @click="addUser.dialogFormVisible=true">添加用户</el-button>
       </el-col>
     </el-row>
-    <!-- 表格 -->
+    <!-- 用户列表 -->
     <el-table :data="tableData" style="width: 100%" stripe>
       <el-table-column type="index" width="50">
       </el-table-column>
@@ -154,7 +154,7 @@ export default {
       );
       // console.log(res);
       var { meta: { status, msg }, data } = res.data;
-      // console.log(data);
+      console.log(data);
       this.tableData = data.users;
       this.totalPage = data.total;
     },
